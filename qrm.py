@@ -24,6 +24,13 @@ if __name__ == "__main__":
         inputFile = r"D:\Dürer\infoMCS\qrMaker\qrMaker\test.txt"
     links = open(inputFile,'r')
     nameIncrement = 0
+    try:
+        os.makedirs('pictures')
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
+        else:
+            print('pictures dir already exist')
     for link in links:
-        oneQR(nameIncrement,link)
+        oneQR(r'pictures\\'+str(nameIncrement),link)
         nameIncrement = nameIncrement + 1
