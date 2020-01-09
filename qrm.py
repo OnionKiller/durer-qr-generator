@@ -2,6 +2,8 @@
 import os,sys
 import getopt
 
+#added magic
+
 def oneQR(name,link):
     img = qrcode.make(link)
     img.save(str(name)+".png")
