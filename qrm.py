@@ -2,9 +2,9 @@
 import os,sys
 import getopt
 
-#additional mage
+#added magic, merege done succesfully
 
-def makeOneQR(name,link):
+def oneQR(name,link):
     img = qrcode.make(link)
     img.save(str(name)+".png")
     print("created "+str(name)+".png")
