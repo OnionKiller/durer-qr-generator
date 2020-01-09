@@ -3,9 +3,9 @@ import os,sys
 import getopt
 
 def oneQR(name,link):
-    img = qrcode.make()
-    img.save(name+".png")
-    print("created "+name+".png")
+    img = qrcode.make(link)
+    img.save(str(name)+".png")
+    print("created "+str(name)+".png")
 
 if __name__ == "__main__":
     inputFile = ''
@@ -26,3 +26,4 @@ if __name__ == "__main__":
     nameIncrement = 0
     for link in links:
         oneQR(nameIncrement,link)
+        nameIncrement = nameIncrement + 1
