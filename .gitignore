@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/qrMaker/v16/.suo
