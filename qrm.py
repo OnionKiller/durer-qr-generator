@@ -1,4 +1,4 @@
-import qrcode
+﻿import qrcode
 import os,sys
 import getopt
 
@@ -20,6 +20,8 @@ if __name__ == "__main__":
             sys.exit()
         elif opt in ("-i","--iFile"):
             inputFile = arg
+    if inputFile == '':
+        inputFile = r"D:\Dürer\infoMCS\qrMaker\qrMaker\test.txt"
     links = open(inputFile,'r')
     nameIncrement = 0
     for link in links:
