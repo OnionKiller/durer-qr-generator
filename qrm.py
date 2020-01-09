@@ -21,7 +21,7 @@ if __name__ == "__main__":
         elif opt in ("-i","--iFile"):
             inputFile = arg
     if inputFile == '':
-        inputFile = r"D:\Dürer\infoMCS\qrMaker\qrMaker\test.txt"
+        inputFile = r"test.txt"
     links = open(inputFile,'r')
     nameIncrement = 0
     try:
