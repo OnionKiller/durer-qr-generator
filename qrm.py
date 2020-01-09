@@ -2,12 +2,12 @@
 import os,sys
 import getopt
 
-def oneQR(name,link):
+def makeOneQR(name,link):
     img = qrcode.make(link)
     img.save(str(name)+".png")
     print("created "+str(name)+".png")
 
-if __name__ == "__main__":
+def method_name():
     inputFile = ''
     try:
         opts,args = getopt.getopt(sys.argv[1:],"hi:",["iFile"])
@@ -22,6 +22,10 @@ if __name__ == "__main__":
             inputFile = arg
     if inputFile == '':
         inputFile = r"D:\Dürer\infoMCS\qrMaker\qrMaker\test.txt"
+    return inputFile
+
+if __name__ == "__main__":
+    inputFile = method_name()
     links = open(inputFile,'r')
     nameIncrement = 0
     try:
@@ -32,5 +36,5 @@ if __name__ == "__main__":
         else:
             print('pictures dir already exist')
     for link in links:
-        oneQR(r'pictures\\'+str(nameIncrement),link)
+        makeOneQR(r'pictures\\'+str(nameIncrement),link)
         nameIncrement = nameIncrement + 1
