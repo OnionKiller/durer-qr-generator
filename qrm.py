@@ -4,24 +4,24 @@ import getopt
 
 #added magic, merege done succesfully
 
-def oneQR(name,link):
+def makeOneQR(name,link):
     img = qrcode.make(link)
     img.save(str(name)+".png")
     print("created "+str(name)+".png")
+    print ("qrm.py -i <input file>")
+    sys.exit(2)
 
 def method_name():
     inputFile = ''
     try:
         opts,args = getopt.getopt(sys.argv[1:],"hi:",["iFile"])
     except getopt.GetoptError:
-        print ("qrm.py -i <input file>")
-        sys.exit(2)
-    for opt,arg in args:
-        if opt == "-h":
-            print("qrm.py -i <input file>")
-            sys.exit()
-        elif opt in ("-i","--iFile"):
-            inputFile = arg
+        for opt,arg in args:
+            if opt == "-h":
+                print("qrm.py -i <input file>")
+                sys.exit()
+            elif opt in ("-i","--iFile"):
+                inputFile = arg
     if inputFile == '':
         inputFile = r"test.txt"
     return inputFile
